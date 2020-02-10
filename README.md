@@ -1,4 +1,3 @@
-
 # OPIEKey
 
 [![Build Status](https://travis-ci.com/arcanericky/opiekey.svg?branch=master)](https://travis-ci.com/arcanericky/opiekey)
@@ -11,6 +10,7 @@ A Go package and command-line interface to generate [OPIE (One-time Passwords In
 `opiekey`, but written in Go! _S/KEY authentication like it's 1996_
 
 ### Command Line Usage
+
 ```
 $ opiekey 499 testseed testpassphrase
 LAIR FUME GIBE FROM JIG COP
@@ -29,6 +29,7 @@ opiekey version 1.0.0 linux/amd64
 ```
 
 ### Package Usage
+
 ```
 package main
 
@@ -41,6 +42,7 @@ func main() {
 ```
 
 ### Help
+
 ```
 $ opiekey --help
 opiekey - Program for computing responses to OTP challenges.
@@ -67,6 +69,7 @@ Flags:
 ```
 
 ### Warnings
+
 A particular OPIE implementation might limit the value of the sequence number and the characters and lengths of the seed and passphrase. Neither this utility or package validate this data.
 
 The utility and package support the [MD5](https://en.wikipedia.org/wiki/MD5) and [MD4](https://en.wikipedia.org/wiki/MD4) algorithms.
@@ -74,13 +77,17 @@ The utility and package support the [MD5](https://en.wikipedia.org/wiki/MD5) and
 The [SHA1](https://en.wikipedia.org/wiki/SHA-1) implementation is questionable and probably doesn't produce correct output.
 
 ### Credits
+
 The output of this `opiekey` utility was tested against the output of the now obsolete [opie-client 2.40 Ubuntu package](https://launchpad.net/ubuntu/jaunty/amd64/opie-client/2.40~dfsg-0ubuntu1). The word list was lifted from the integer-word translation dictionary in the `btoe.c` module of the same package and documented as part of [RFC-2289](https://tools.ietf.org/html/rfc2289#page-4-19). Most of my comprehension of the OPIE algorithm came from [ruby-otp](https://github.com/moumar/ruby-otp) so this translation may not be ideal, but it produces the results I require.
 
 ### Inspiration
+
 My day job has deployed a few machines that require responses to OPIE challenges for logins. I very rarely need to login to these machines, but when I do, it's a pain to find an opiekey utility, [mobile device app](https://m.apkpure.com/opiekey/nl.f00d.android.opiekey), or [web page](https://math.berkeley.edu/~vojta/opiekey.html) to generate these responses. I finally decided to code up a small library and utility that can run on most any OS I'm using. This very basic package and utility is the result.
 
 ### Other Resources
+
 The OPIE Authentication System is a dinosaur and its usage is rapidly dwindling. Listed below are a few useful resources, noting that I don't endorse, recommmend, or support any executables you dare to run:
+
 * A copy of the [OPIE archive](http://www.tifosi.com/OTP/) including programs for various operating systems and a [README](http://www.tifosi.com/OTP/README)
 * [FreeBSD's OPIE implementation](https://github.com/freebsd/freebsd/tree/master/contrib/opie)
 * [OPIE host setup](http://seann.herdejurgen.com/resume/samag.com/html/v08/i13/a4.htm)
